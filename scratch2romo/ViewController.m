@@ -86,9 +86,9 @@ static void AudioInputCallback(
         CMAccelerometerHandler handler = ^(CMAccelerometerData *data, NSError *error)
         {
             // 画面に表示
-            _axLabel.text = [NSString stringWithFormat:@"ax: %f", data.acceleration.x];
-            _ayLabel.text = [NSString stringWithFormat:@"ay: %f", data.acceleration.y];
-            _azLabel.text = [NSString stringWithFormat:@"az: %f", data.acceleration.z];
+            self->_axLabel.text = [NSString stringWithFormat:@"ax: %f", data.acceleration.x];
+            self->_ayLabel.text = [NSString stringWithFormat:@"ay: %f", data.acceleration.y];
+            self->_azLabel.text = [NSString stringWithFormat:@"az: %f", data.acceleration.z];
             
             NSDictionary *sensors = @{
                                       @"ax": [[NSNumber alloc] initWithDouble:data.acceleration.x],
